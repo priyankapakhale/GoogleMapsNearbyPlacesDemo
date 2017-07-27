@@ -16,10 +16,10 @@ import java.util.List;
  * @author Priyanka
  */
 
-public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
+class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
 
-    String googlePlacesData;
-    GoogleMap mMap;
+    private String googlePlacesData;
+    private GoogleMap mMap;
     String url;
 
     @Override
@@ -40,7 +40,7 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
     @Override
     protected void onPostExecute(String s){
 
-        List<HashMap<String, String>> nearbyPlaceList = null;
+        List<HashMap<String, String>> nearbyPlaceList;
         DataParser parser = new DataParser();
         nearbyPlaceList = parser.parse(s);
         Log.d("nearbyplacesdata","called parse method");

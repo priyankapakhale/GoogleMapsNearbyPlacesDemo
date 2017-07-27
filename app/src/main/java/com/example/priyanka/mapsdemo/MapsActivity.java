@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,7 +32,6 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
@@ -81,21 +79,13 @@ LocationListener{
                         }
                         mMap.setMyLocationEnabled(true);
                     }
-
                 }
                 else
                 {
                     Toast.makeText(this,"Permission Denied" , Toast.LENGTH_LONG).show();
-
                 }
-
         }
-
-
-
-
     }
-
 
     /**
      * Manipulates the map once available.
@@ -110,14 +100,10 @@ LocationListener{
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
-        {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             bulidGoogleApiClient();
             mMap.setMyLocationEnabled(true);
-
-
         }
-
     }
 
 
@@ -151,13 +137,7 @@ LocationListener{
         if(client != null)
         {
             LocationServices.FusedLocationApi.removeLocationUpdates(client,this);
-
-
         }
-
-
-
-
     }
 
     public void onClick(View v)
@@ -170,7 +150,7 @@ LocationListener{
             case R.id.B_search:
                 EditText tf_location =  findViewById(R.id.TF_location);
                 String location = tf_location.getText().toString();
-                List<Address> addressList = null;
+                List<Address> addressList;
 
 
                 if(!location.equals(""))
@@ -232,7 +212,6 @@ LocationListener{
                 break;
             case R.id.B_to:
         }
-
     }
 
 
@@ -249,7 +228,6 @@ LocationListener{
         Log.d("MapsActivity", "url = "+googlePlaceUrl.toString());
 
         return googlePlaceUrl.toString();
-
     }
 
     @Override
@@ -265,9 +243,6 @@ LocationListener{
         {
             LocationServices.FusedLocationApi.requestLocationUpdates(client, locationRequest, this);
         }
-
-
-
     }
 
 
@@ -279,33 +254,24 @@ LocationListener{
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION))
             {
                 ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.ACCESS_FINE_LOCATION },REQUEST_LOCATION_CODE);
-
             }
             else
             {
                 ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.ACCESS_FINE_LOCATION },REQUEST_LOCATION_CODE);
-
-
             }
             return false;
 
         }
         else
             return true;
-
-
-
-
     }
 
 
     @Override
     public void onConnectionSuspended(int i) {
-
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
     }
 }
