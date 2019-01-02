@@ -202,8 +202,8 @@ LocationListener{
                 break;
             case R.id.B_restaurants:
                 mMap.clear();
-                String resturant = "restuarant";
-                url = getUrl(latitude, longitude, resturant);
+                String restaurant = "restaurant";
+                url = getUrl(latitude, longitude, restaurant);
                 dataTransfer[0] = mMap;
                 dataTransfer[1] = url;
 
