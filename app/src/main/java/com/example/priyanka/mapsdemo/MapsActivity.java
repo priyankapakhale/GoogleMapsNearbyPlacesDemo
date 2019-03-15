@@ -145,6 +145,7 @@ LocationListener{
         Object dataTransfer[] = new Object[2];
         GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
         Log.i("test", "onClick: ");
+        Log.i("test2", "onClick: one more ");
 
         switch(v.getId())
         {
