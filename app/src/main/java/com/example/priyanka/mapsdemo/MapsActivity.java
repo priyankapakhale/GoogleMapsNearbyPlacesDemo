@@ -146,6 +146,7 @@ LocationListener{
         GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
         Log.i("test", "onClick: ");
         Log.i("test2", "onClick: one more ");
+        Log.i("test3", "onClick: one more ");
 
         switch(v.getId())
         {
