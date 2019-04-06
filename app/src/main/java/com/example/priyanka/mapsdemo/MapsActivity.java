@@ -147,6 +147,8 @@ LocationListener{
         Log.i("test", "onClick: ");
         Log.i("test", "onClick: 2 ");
         Log.i("test", "onClick: ");
+        Log.i("test", "onClick: 3");
+
 
 
         switch(v.getId())
